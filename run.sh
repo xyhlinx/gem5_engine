@@ -16,14 +16,21 @@ benchmarks=(
 )
 
 core_types=(
-    # "c_8_192_256"
-    # "s_8_192_256"
-    # "c_8_192_48"
-    # "s_8_192_48"
-    # "c_2_192_256"
-    # "s_2_192_256"
-    # "s_8_16_256"
-    # "c_8_16_256"
+    8_16_48_simple
+    2_192_48_simple
+    2_16_256_simple
+    2_16_48_complex
+    8_192_48_simple
+    8_16_256_simple
+    8_16_48_complex
+    2_192_256_simple
+    2_192_48_complex
+    2_16_256_complex
+    8_192_256_simple
+    8_192_48_complex
+    8_16_256_complex
+    2_192_256_complex
+    8_192_256_complex
 )
 
 for b in "${benchmarks[@]}"

@@ -25,12 +25,12 @@ class Solution:
         for a in ar:
             name = map(lambda x: str(x), a)
             name = '_'.join(name)
-            print('{:s}: MyO3Processor({}, {}, {}, \'{}\'),'.format(name, *a))
+            print('\'{:s}\': MyO3Processor({}, {}, {}, \'{}\'),'.format(name, *a))
 
     def res(self, origin, picking):
         self.ans = []
         self.origin = origin
-        for i in range(2, 5):
+        for i in range(1, 5):
             path = []
             self.backtracking(picking, 0, i, path)
         self.custom_print(self.ans)

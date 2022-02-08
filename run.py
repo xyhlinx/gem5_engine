@@ -14,28 +14,25 @@ def run_experiment(core_type, workload):
 
     simulator.run()
 
-    """
-    "c8_192_256"
-    "s8_192_256"
-    "c_8_192_48"
-    "s_8_192_48"
-    "c_2_192_256"
-    "s_2_192_256
-    """
 cores = {
-    "c_8_192_256": MyO3Processor(8, 192, 256, 'complex'),
-    "s_8_192_256": MyO3Processor(8, 192, 256, 'simple'),
-    "c_8_192_48": MyO3Processor(8, 192, 48, 'complex'),
-    "s_8_192_48": MyO3Processor(8, 192, 48, 'simple'),
-    "c_2_192_256": MyO3Processor(2, 192, 256, 'complex'),
-    "s_2_192_256": MyO3Processor(2, 192, 256, 'simple'),
-    "c_8_16_256": MyO3Processor(8, 16, 256, 'complex'),
-    "s_8_16_256": MyO3Processor(8, 16, 256, 'simple'),
-    # "LargeCore": MyO3Processor(8, 192, 256, 'complex'),
-    # "LargeCore": MyO3Processor(2, 16, 256, 'simple'),
-    # "LargeCore": MyO3Processor(2, 192, 48, 'simple'),
-    # "LargeCore": MyO3Processor(8, 16, 48, 'simple'),
-    # "SmallCore": MyO3Processor(2, 16, 48, 'simple'),
+    '8_16_48_simple': MyO3Processor(8, 16, 48, 'simple'),
+    '2_192_48_simple': MyO3Processor(2, 192, 48, 'simple'),
+    '2_16_256_simple': MyO3Processor(2, 16, 256, 'simple'),
+    '2_16_48_complex': MyO3Processor(2, 16, 48, 'complex'),
+    '8_192_48_simple': MyO3Processor(8, 192, 48, 'simple'),
+    '8_16_256_simple': MyO3Processor(8, 16, 256, 'simple'),
+    '8_16_48_complex': MyO3Processor(8, 16, 48, 'complex'),
+    '2_192_256_simple': MyO3Processor(2, 192, 256, 'simple'),
+    '2_192_48_complex': MyO3Processor(2, 192, 48, 'complex'),
+    '2_16_256_complex': MyO3Processor(2, 16, 256, 'complex'),
+    '8_192_256_simple': MyO3Processor(8, 192, 256, 'simple'),
+    '8_192_48_complex': MyO3Processor(8, 192, 48, 'complex'),
+    '8_16_256_complex': MyO3Processor(8, 16, 256, 'complex'),
+    '2_192_256_complex': MyO3Processor(2, 192, 256, 'complex'),
+    '8_192_256_complex': MyO3Processor(8, 192, 256, 'complex'),
+
+    "LargeCore": MyO3Processor(8, 16, 48, 'simple'),
+    "SmallCore": MyO3Processor(2, 16, 48, 'simple'),
 }
 
 if __name__ == "__m5_main__":
