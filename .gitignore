@@ -1,0 +1,6 @@
+m5out/*
+__pycache__
+*.swp
+*.pyc
+*.csv
+core
