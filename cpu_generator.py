@@ -30,7 +30,7 @@ class Solution:
     def res(self, origin, picking):
         self.ans = []
         self.origin = origin
-        for i in range(1, 5):
+        for i in range(0, 5):
             path = []
             self.backtracking(picking, 0, i, path)
         self.custom_print(self.ans)

@@ -15,6 +15,7 @@ def run_experiment(core_type, workload):
     simulator.run()
 
 cores = {
+    '2_16_48_simple': MyO3Processor(2, 16, 48, 'simple'),
     '8_16_48_simple': MyO3Processor(8, 16, 48, 'simple'),
     '2_192_48_simple': MyO3Processor(2, 192, 48, 'simple'),
     '2_16_256_simple': MyO3Processor(2, 16, 256, 'simple'),
@@ -30,6 +31,7 @@ cores = {
     '8_16_256_complex': MyO3Processor(8, 16, 256, 'complex'),
     '2_192_256_complex': MyO3Processor(2, 192, 256, 'complex'),
     '8_192_256_complex': MyO3Processor(8, 192, 256, 'complex'),
+
 
     "LargeCore": MyO3Processor(8, 16, 48, 'simple'),
     "SmallCore": MyO3Processor(2, 16, 48, 'simple'),

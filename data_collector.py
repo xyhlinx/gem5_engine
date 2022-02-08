@@ -7,7 +7,7 @@ from datetime import datetime
 
 filename = 'stats.txt'
 path = './m5out/1644310610*/'
-sim_word = 'simSeconds'
+sim_word = 'board.processor.cores.core.ipc'
 d = {}
 workload_list = [
         "Bubblesort",
@@ -35,6 +35,7 @@ for file in glob.glob(path + filename):
                     d[d_name] = {}
                 d[d_name][workload] = line.split()[1]
 
+print(d)
 
 with open('ggg.csv', 'w') as csvfile:
     fields_name = ['core'] + workload_list 
