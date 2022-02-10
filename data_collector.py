@@ -7,27 +7,27 @@ from datetime import datetime
 
 filename = 'stats.txt'
 path = './m5out/1644310610*/'
-sim_word = 'board.processor.cores.core.ipc'
+keyword = 'board.processor.cores.core.ipc'
 d = {}
 workload_list = [
-        "Bubblesort",
-        "IntMM",
-        "Perm",
-        "Queens",
-        "RealMM",
-        "Treesort",
-        "FloatMM",
-        "Oscar",
-        "Puzzle",
-        "Quicksort",
-        "Towers",
+    "Bubblesort",
+    "IntMM",
+    "Perm",
+    "Queens",
+    "RealMM",
+    "Treesort",
+    "FloatMM",
+    "Oscar",
+    "Puzzle",
+    "Quicksort",
+    "Towers",
 ]
 
 
 for file in glob.glob(path + filename):
     with open(file, 'r') as f:
         for line in f.readlines():
-            if sim_word in line:
+            if keyword in line:
                 d_name = file.split('/')[2]
                 workload = ''.join(d_name.split('_')[1])
                 d_name = '_'.join(d_name.split('_')[2:])
@@ -47,5 +47,5 @@ with open('ggg.csv', 'w') as csvfile:
             if workload_list[i] in v:
                 wl.append(v[workload_list[i]])
                 continue
-            wl.append(0)
+            wl.append('NA')
         writer.writerow([k] + wl)

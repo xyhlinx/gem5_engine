@@ -27,10 +27,11 @@ class Solution:
             name = '_'.join(name)
             print('\'{:s}\': MyO3Processor({}, {}, {}, \'{}\'),'.format(name, *a))
 
-    def res(self, origin, picking):
+    def res(self, base_parameters, picking):
         self.ans = []
-        self.origin = origin
-        for i in range(0, 5):
+        self.base_parameters = base_parameters
+        picking = [(i, picking[i]) for i in range(len(picking))]
+        for i in range(0, len(picking) + 1):
             path = []
             self.backtracking(picking, 0, i, path)
         self.custom_print(self.ans)
@@ -39,9 +40,9 @@ class Solution:
         if len(path) == nums:
             tmp_ans = []
             pos = 0
-            for i in range(len(self.origin)):
+            for i in range(len(self.base_parameters)):
                 if pos >= nums or path[pos][0] > i:
-                    tmp_ans.append(self.origin[i])
+                    tmp_ans.append(self.base_parameters[i])
                     continue
                 tmp_ans.append(path[pos][1])
                 pos += 1
@@ -57,8 +58,9 @@ class Solution:
 
 
 if __name__ == '__main__':
+    base_parameters = [2, 16, 48, 'simple']
+    picking = [8, 192, 256, 'complex']
+
     s = Solution()
-    origin = [2, 16, 48, 'simple']
-    picking = [(0, 8), (1, 192), (2, 256), (3, 'complex')]
-    s.res(origin, picking)
+    s.res(base_parameters, picking)
     
