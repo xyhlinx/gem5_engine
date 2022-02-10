@@ -50,7 +50,6 @@ class Solution:
             self.ans.append(tmp_ans)
             return
 
-        stack = []
         for i in range(idx, len(picking)):
             path.append(picking[i])
             self.backtracking(picking, i + 1, nums, path)
