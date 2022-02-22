@@ -1,6 +1,6 @@
 for (( b=0; b<=4; b++ ))
 do
-	for (( c=0; c<=3; c++ ))
+	for (( c=1; c<=3; c++ ))
     	do
 
         	now=$(date +%s)
